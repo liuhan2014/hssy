@@ -18,7 +18,7 @@ class SiteController extends Controller
     public function behaviors()
     {
         return [
-            'access' => [
+/*            'access' => [
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
@@ -32,6 +32,7 @@ class SiteController extends Controller
                     ],
                 ],
             ],
+*/
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
@@ -52,6 +53,12 @@ class SiteController extends Controller
             ],
         ];
     }
+    public function actionTest()
+    {
+	var_dump(11);
+        //return $this->render('index');
+    }
+
 
     public function actionIndex()
     {
