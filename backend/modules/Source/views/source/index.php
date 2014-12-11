@@ -13,6 +13,10 @@ $this->params['breadcrumbs'][] = $this->title;
 
 // 渠道状态
 $status = [1 => '正常' ,2=> '禁用'];
+
+$this->title = '客户管理';
+$this->params['breadcrumbs'][] = ['label' => '个人客户', 'url' => ['customer/index']];
+$this->params['breadcrumbs'][] = $this->title;
 ?>
 
 <div class="page-header">

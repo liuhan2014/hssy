@@ -9,13 +9,19 @@ use yii\helpers\Html;
 $this->title = '渠道新增';
 $this->params['breadcrumbs'][] = ['label' => '渠道管理', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
+
 ?>
-<div class="source-create">
+<div class="main-content">
 
-    <h1><?= Html::encode($this->title) ?></h1>
 
-    <?= $this->render('_form', [
-        'model' => $model,
-    ]) ?>
-
+	
+	<div class="source-create">
+	
+	    <h1><?= Html::encode($this->title) ?></h1>
+	
+	    <?= $this->render('_form', [
+	        'model' => $model,
+	    ]) ?>
+	
+	</div>
 </div>

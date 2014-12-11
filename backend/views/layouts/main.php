@@ -7,7 +7,6 @@ use yii\widgets\Breadcrumbs;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
-
 AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
@@ -20,53 +19,117 @@ AppAsset::register($this);
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
 </head>
-<body>
+
+<body  class="no-skin">
     <?php $this->beginBody() ?>
-    <div class="wrap">
-        <?php
-            NavBar::begin([
-                'brandLabel' => 'Aggcms',
-                'brandUrl' => Yii::$app->homeUrl,
-                'options' => [
-                    'class' => 'navbar-inverse navbar-fixed-top',
-                ],
-            ]);
-            $menuItems = [
-                ['label' => 'Home', 'url' => ['/site/index']],
-            ];
-            if (Yii::$app->user->isGuest) {
-                $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
-            } else {
-                $menuItems[] = [
-                    'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
-                    'url' => ['/site/logout'],
-                    'linkOptions' => ['data-method' => 'post']
-                ];
-            }
-            echo Nav::widget([
-                'options' => ['class' => 'navbar-nav navbar-right'],
-                'items' => $menuItems,
-            ]);
-            NavBar::end();
-        ?>
+	<div id="navbar" class="navbar navbar-default">
+		<div class="navbar-container" id="navbar-container">
+			<button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler">
+				<span class="sr-only">Toggle sidebar</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
 
-        <div class="container">
-        <?= Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ]) ?>
+			<!-- /section:basics/sidebar.mobile.toggle -->
+			<div class="navbar-header pull-left">
+				<a href="#" class="navbar-brand"><small><i class="fa fa-leaf"></i>Agg-CMS</small></a>
+			</div>
 
-        <?= $content ?>
-        </div>
-    </div>
+			<!-- #section:basics/navbar.dropdown -->
+			<div class="navbar-buttons navbar-header pull-right" role="navigation">
+				<ul class="nav ace-nav">
+					<!-- #section:basics/navbar.user_menu -->
+					<li class="light-blue">
+						<a data-toggle="dropdown" href="#" class="dropdown-toggle">
+							<img class="nav-user-photo" src="images/user.jpg" />
+							<span class="user-info"><small>Welcome,</small>Admin</span>
+							<i class="ace-icon fa fa-caret-down"></i>
+						</a>
 
-    <footer class="footer">
-        <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
-        <p class="pull-right"></p>
-        </div>
-    </footer>
+						<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-closer">
+							<li>
+								<a href="#">
+									<i class="ace-icon fa fa-cog"></i>
+									Settings
+								</a>
+							</li>
 
+							<li class="divider"></li>
+
+							<li>
+								<a href="#">
+									<i class="ace-icon fa fa-power-off"></i>
+									Logout
+								</a>
+							</li>
+						</ul>
+					</li>
+					<!-- /section:basics/navbar.user_menu -->
+				</ul>
+			</div>
+			<!-- /section:basics/navbar.dropdown -->
+		</div><!-- /.navbar-container -->
+	</div>
+
+	<div class="main-container" id="main-container">
+		<!-- #section:basics/sidebar -->
+		<div id="sidebar" class="sidebar responsive">
+			<div class="sidebar-shortcuts" id="sidebar-shortcuts">
+				<div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+					<button class="btn btn-success"><i class="ace-icon fa fa-signal"></i></button>
+					<button class="btn btn-info"><i class="ace-icon fa fa-pencil"></i></button>
+					<button class="btn btn-warning"><i class="ace-icon fa fa-users"></i></button>
+					<button class="btn btn-danger"><i class="ace-icon fa fa-cogs"></i></button>
+				</div>
+			</div><!-- /.sidebar-shortcuts -->
+
+			<ul class="nav nav-list">
+				<li class="">
+					<a href="index.html">
+						<i class="menu-icon fa fa-tachometer"></i>
+						<span class="menu-text">管理员管理</span>
+					</a>
+					<b class="arrow"></b>
+				</li>
+
+				<li class="">
+					<a href="#" class="dropdown-toggle">
+						<i class="menu-icon fa fa-desktop"></i>
+						<span class="menu-text">渠道管理</span>
+						<b class="arrow fa fa-angle-down"></b>
+					</a>
+					<b class="arrow"></b>
+					<ul class="submenu">
+						<li class="active">
+							<a href="index.php?r=source%2Fsource%2Findex"><i class="menu-icon fa fa-caret-right"></i>渠道列表</a>
+							<b class="arrow"></b>
+						</li>
+						<li class="">
+							<a href="index.php?r=source%2Fsource%2Fcreate"><i class="menu-icon fa fa-caret-right"></i>添加新渠道</a>
+							<b class="arrow"></b>
+						</li>
+					</ul>
+				</li>
+			</ul><!-- /.nav-list -->
+		</div>
+
+		<div class="main-content">
+			<div class="page-content">
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="breadcrumbs" id="breadcrumbs">
+						<?= Breadcrumbs::widget([
+					             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+					         ]) ?>
+						</div>
+        					<?= $content ?>
+					</div><!-- /.col -->
+				</div><!-- /.row -->
+			</div><!-- /.page-content -->
+		</div><!-- /.main-content -->
+	</div><!-- /.main-container -->
     <?php $this->endBody() ?>
-</body>
+  </body>
 </html>
 <?php $this->endPage() ?>
