@@ -16,9 +16,8 @@ return [
     'modules' => [
 	'gii' => 'yii\gii\Module',
 //	'yii2-user' => 'communityii\user\Module',
-	 'source' => [
-            'class' => 'app\modules\Source\Source',
-        	],
+	 'source' => ['class' => 'app\modules\Source\Source',],
+	 'visit' => ['class' => 'app\modules\Visit\Visit',],
 	],
     'components' => [
         'request' => [

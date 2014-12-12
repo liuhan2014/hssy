@@ -115,17 +115,13 @@ AppAsset::register($this);
 		</div>
 
 		<div class="main-content">
+			<div class="breadcrumbs" id="breadcrumbs">
+				<?= Breadcrumbs::widget([
+					'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+				]) ?>
+			</div>
 			<div class="page-content">
-				<div class="row">
-					<div class="col-xs-12">
-						<div class="breadcrumbs" id="breadcrumbs">
-						<?= Breadcrumbs::widget([
-					             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-					         ]) ?>
-						</div>
-        					<?= $content ?>
-					</div><!-- /.col -->
-				</div><!-- /.row -->
+        			<?= $content ?>
 			</div><!-- /.page-content -->
 		</div><!-- /.main-content -->
 	</div><!-- /.main-container -->

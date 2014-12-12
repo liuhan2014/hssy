@@ -6,6 +6,7 @@ use yii\bootstrap\ActiveForm;
 /* @var $this yii\web\View */
 /* @var $model app\modules\Source\models\Source */
 /* @var $form yii\widgets\ActiveForm */
+$visit_result = Yii::$app->params['visit_result'];
 ?>
 
 <div class="source-form">
@@ -20,16 +21,14 @@ use yii\bootstrap\ActiveForm;
                                 ],
                              ],
                         ]); ?>
+    <!-- ?= $form->field($model, 'customer_id')->textInput() ? -->
 
-    <?= $form->field($model, 'name')->textInput(['maxlength' => 128]) ?>
+    <?= $form->field($model, 'result')->textInput() ?>
 
-    <?= $form->field($model, 'desc')->textInput(['maxlength' => 512]) ?>
+    <?= $form->field($model, 'content')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'person')->textInput(['maxlength' => 16]) ?>
+    <?= $form->field($model, 'next_time')->textInput() ?>
 
-    <?= $form->field($model, 'phone')->textInput(['maxlength' => 32]) ?>
-
-    <!-- ?= $form->field($model, 'create_time')->textInput() ? -->
     <div class="form-group ">
     </div>
 
