@@ -84,6 +84,33 @@ class SourceSearch extends Source
         return ['lists'=>$models,'pages'=>$pages,'count'=>$count];
     }
 
+    /*
+     * get source [id,name]
+     * 
+     * @param  INT   status 
+     * 
+     * @return array[id=>name]
+     */ 
+    public function getAll($status = null){
+        $query = Source::find()->orderBy('id DESC');
+	
+	if($status){
+        	$query->andFilterWhere([
+        	    'status' => $status,
+        	]);
+	}
+	
+	$model = $query->select('id,name')->all();	
+	
+	$arr = [];
+		
+	foreach($model as $key=>$item){
+	    $arr[$item->id] = $item->name;
+	}
+	
+	return $arr;
+    }
+
 
 
 }

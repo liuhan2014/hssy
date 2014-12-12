@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
+use kartik\select2\Select2;
 
 /* @var $this yii\web\View */
 /* @var $model app\modules\Source\models\Source */
@@ -22,8 +23,13 @@ $visit_result = Yii::$app->params['visit_result'];
                              ],
                         ]); ?>
     <!-- ?= $form->field($model, 'customer_id')->textInput() ? -->
-
-    <?= $form->field($model, 'result')->textInput() ?>
+    <?= $form->field($model, 'result')->widget(
+                            Select2::className(),
+                            [
+                                'data' => $visit_result,
+                                //'options' => ['placeholder' => '请选择组...'],
+                             ]) ?>
+    <!-- ?= $form->field($model, 'result')->textInput() ? -->
 
     <?= $form->field($model, 'content')->textarea(['rows' => 6]) ?>
 

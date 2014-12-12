@@ -111,6 +111,25 @@ AppAsset::register($this);
 						</li>
 					</ul>
 				</li>
+
+				<li class="">
+					<a href="#" class="dropdown-toggle">
+						<i class="menu-icon fa fa-users"></i>
+						<span class="menu-text">客户管理</span>
+						<b class="arrow fa fa-angle-down"></b>
+					</a>
+					<b class="arrow"></b>
+					<ul class="submenu">
+						<li class="active">
+							<a href="index.php?r=customer%2Fcustomer%2Findex"><i class="menu-icon fa fa-caret-right"></i>客户列表</a>
+							<b class="arrow"></b>
+						</li>
+						<li class="">
+							<a href="index.php?r=customer%2Fcustomer%2Fcreate"><i class="menu-icon fa fa-caret-right"></i>客户新增</a>
+							<b class="arrow"></b>
+						</li>
+					</ul>
+				</li>
 			</ul><!-- /.nav-list -->
 		</div>
 

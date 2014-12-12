@@ -18,6 +18,7 @@ return [
 //	'yii2-user' => 'communityii\user\Module',
 	 'source' => ['class' => 'app\modules\Source\Source',],
 	 'visit' => ['class' => 'app\modules\Visit\Visit',],
+	 'customer' => ['class' => 'app\modules\Customer\Customer',],
 	],
     'components' => [
         'request' => [
