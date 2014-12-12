@@ -19,6 +19,7 @@ return [
 	 'source' => ['class' => 'app\modules\Source\Source',],
 	 'visit' => ['class' => 'app\modules\Visit\Visit',],
 	 'customer' => ['class' => 'app\modules\Customer\Customer',],
+	 'admin' => ['class' => 'app\modules\Admin\Admin',],
 	],
     'components' => [
         'request' => [

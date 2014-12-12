@@ -86,16 +86,27 @@ AppAsset::register($this);
 
 			<ul class="nav nav-list">
 				<li class="">
-					<a href="index.html">
-						<i class="menu-icon fa fa-tachometer"></i>
+					<a href="#" class="dropdown-toggle">
+						<i class="menu-icon fa fa-cogs"></i>
 						<span class="menu-text">管理员管理</span>
+						<b class="arrow fa fa-angle-down"></b>
 					</a>
 					<b class="arrow"></b>
+					<ul class="submenu">
+						<li class="active">
+							<a href="#"><i class="menu-icon fa fa-caret-right"></i>管理员新增</a>
+							<b class="arrow"></b>
+						</li>
+						<li class="">
+							<a href="#"><i class="menu-icon fa fa-caret-right"></i>分组管理</a>
+							<b class="arrow"></b>
+						</li>
+					</ul>
 				</li>
 
 				<li class="">
 					<a href="#" class="dropdown-toggle">
-						<i class="menu-icon fa fa-desktop"></i>
+						<i class="menu-icon fa fa-eye"></i>
 						<span class="menu-text">渠道管理</span>
 						<b class="arrow fa fa-angle-down"></b>
 					</a>
@@ -126,6 +137,29 @@ AppAsset::register($this);
 						</li>
 						<li class="">
 							<a href="index.php?r=customer%2Fcustomer%2Fcreate"><i class="menu-icon fa fa-caret-right"></i>客户新增</a>
+							<b class="arrow"></b>
+						</li>
+					</ul>
+				</li>
+				<!-- statistics -->
+				<li class="">
+					<a href="#" class="dropdown-toggle">
+						<i class="menu-icon fa fa-bar-chart-o"></i>
+						<span class="menu-text">分析统计</span>
+						<b class="arrow fa fa-angle-down"></b>
+					</a>
+					<b class="arrow"></b>
+					<ul class="submenu">
+						<li class="active">
+							<a href="index.php?r=customer%2Fcustomer%2Findex"><i class="menu-icon fa fa-caret-right"></i>客户统计</a>
+							<b class="arrow"></b>
+						</li>
+						<li class="">
+							<a href="index.php?r=customer%2Fcustomer%2Fcreate"><i class="menu-icon fa fa-caret-right"></i>渠道统计</a>
+							<b class="arrow"></b>
+						</li>
+						<li class="">
+							<a href="index.php?r=customer%2Fcustomer%2Fcreate"><i class="menu-icon fa fa-caret-right"></i>订单统计</a>
 							<b class="arrow"></b>
 						</li>
 					</ul>
