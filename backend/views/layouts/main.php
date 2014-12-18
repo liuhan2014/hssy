@@ -35,7 +35,15 @@ AppAsset::register($this);
 			<div class="navbar-header pull-left">
 				<a href="#" class="navbar-brand"><small><i class="fa fa-leaf"></i>Agg-CMS</small></a>
 			</div>
-
+			<?php 
+				$userModule = Yii::$app->getModule('user');
+				 //var_dump(\Yii::$app->user->test()); 
+				 //var_dump(\Yii::$app->user->isGuest); 
+				 //var_dump(\Yii::$app->user->getId());
+				 //var_dump(Yii::$app->user->test());
+				 //print_r(Yii::$app->user);
+				 //print_r($userModule);
+			 ?>
 			<!-- #section:basics/navbar.dropdown -->
 			<div class="navbar-buttons navbar-header pull-right" role="navigation">
 				<ul class="nav ace-nav">
@@ -58,7 +66,7 @@ AppAsset::register($this);
 							<li class="divider"></li>
 
 							<li>
-								<a href="#">
+								<a href="index.php?r=user/security/logout" >
 									<i class="ace-icon fa fa-power-off"></i>
 									Logout
 								</a>

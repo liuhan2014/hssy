@@ -15,7 +15,15 @@ return [
     'bootstrap' => ['gii'],
     'modules' => [
 	'gii' => 'yii\gii\Module',
-//	'yii2-user' => 'communityii\user\Module',
+	//'user' => 'communityii\user\Module',
+	 //'user' => 'dektrium\user\Module',
+	 'user' => [
+            'class' => 'dektrium\user\Module',
+            'enableUnconfirmedLogin' => true,
+            'confirmWithin' => 21600,
+            'cost' => 12,
+            'admins' => ['admin']
+         ],
 	 'source' => ['class' => 'app\modules\Source\Source',],
 	 'visit' => ['class' => 'app\modules\Visit\Visit',],
 	 'customer' => ['class' => 'app\modules\Customer\Customer',],
@@ -28,6 +36,7 @@ return [
         ],
         'user' => [
             'identityClass' => 'common\models\User',
+            //'identityClass' => 'yii\web\User',
             'enableAutoLogin' => true,
         ], 
 

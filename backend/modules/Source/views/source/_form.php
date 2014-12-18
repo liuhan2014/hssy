@@ -16,7 +16,7 @@ use yii\bootstrap\ActiveForm;
                         'fieldConfig' => [
                                 'horizontalCssClasses' => [
                                     'label' => 'col-sm-2',
-                                    'wrapper' => 'col-sm-8',
+                                    'wrapper' => 'col-sm-6',
                                 ],
                              ],
                         ]); ?>
