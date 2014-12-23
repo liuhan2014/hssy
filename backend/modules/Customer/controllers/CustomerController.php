@@ -70,7 +70,10 @@ class CustomerController extends Controller
 	    // 初始状态  1 
 	    $model->status  = 1;
 
-	    $model->save();
+	    if($model->save()){
+		// 记录日志
+
+	    }
 
             return $this->redirect(['index']);
         } else {

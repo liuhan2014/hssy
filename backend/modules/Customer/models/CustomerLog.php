@@ -51,4 +51,6 @@ class CustomerLog extends \yii\db\ActiveRecord
             'type' => '操作类别',
         ];
     }
+   
+
 }
