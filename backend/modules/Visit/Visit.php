@@ -1,4 +1,10 @@
 <?php
+/**
+ * @author liuh
+ * @date   2015-01-05
+ *
+ * customer visit messge 
+*/
 
 namespace app\modules\Visit;
 

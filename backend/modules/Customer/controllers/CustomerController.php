@@ -33,11 +33,12 @@ class CustomerController extends Controller
     public function actionIndex()
     {
         $searchModel = new CustomerSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+//        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $data = $searchModel->getList(Yii::$app->request->queryParams);
 
         return $this->render('index', [
             'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
+            'data' => $data,
         ]);
     }
 

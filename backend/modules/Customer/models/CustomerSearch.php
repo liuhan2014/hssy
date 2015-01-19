@@ -6,6 +6,7 @@ use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 use app\modules\Customer\models\Customer;
+use yii\db\Query;
 
 /**
  * CustomerSearch represents the model behind the search form about `app\modules\Customer\models\Customer`.
@@ -76,6 +77,16 @@ class CustomerSearch extends Customer
 
         return $dataProvider;
     }
-
-
+    
+    // 获取用户列表
+    public function getList($params)
+    {
+	$query = new Query;
+	// compose the query
+	$data = $query->select('*')
+	    ->from('tbl_customer')
+	    ->limit(10)->all();
+	
+	return $data;
+    }
 }

@@ -1,5 +1,10 @@
 <?php
-
+/**
+ * 来源渠道管理
+ * 
+ * @description  商家推广来源渠道管理 记录渠道 分析渠道效益
+ *
+*/
 namespace app\modules\Source;
 
 use app\modules\Source\models\SourceSearch;

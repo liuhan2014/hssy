@@ -11,38 +11,38 @@ return [
     'name' => '测试后台',
     'basePath' => dirname(__DIR__),
     'language' => 'zh-CN',
-    'timezone' => 'Asia/Shanghai',
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['gii'],
     'modules' => [
 	'gii' => 'yii\gii\Module',
-	'user' => [			// 管理员管理
-           'class' => 'dektrium\user\Module',
-           'enableUnconfirmedLogin' => true,
-           'confirmWithin' => 21600,
-           'cost' => 12,
-           'admins' => ['admin','liuh']
-        ],
-	'source' => ['class' => 'app\modules\Source\Source',],	// 渠道管理
-	'visit' => ['class' => 'app\modules\Visit\Visit',],	// 回访管理
-	'customer' => ['class' => 'app\modules\Customer\Customer',], // 客户管理
-	'admin' => ['class' => 'app\modules\Admin\Admin',],	// 管理员其它操作  例 分组 rbac
+	//'user' => 'communityii\user\Module',
+	 //'user' => 'dektrium\user\Module',
+	 'user' => [
+            'class' => 'dektrium\user\Module',
+            'enableUnconfirmedLogin' => true,
+            'confirmWithin' => 21600,
+            'cost' => 12,
+            'admins' => ['admin']
+         ],
+	 'source' => ['class' => 'app\modules\Source\Source',],
+	 'visit' => ['class' => 'app\modules\Visit\Visit',],
+	 'customer' => ['class' => 'app\modules\Customer\Customer',],
+	 'admin' => ['class' => 'app\modules\Admin\Admin',],
 	],
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => '0r8XJKUtSIkiOCGW1V4CJLJ9Oa3KjFND',
         ],
-/*        'user' => [
+        'user' => [
             'identityClass' => 'common\models\User',
             //'identityClass' => 'yii\web\User',
             'enableAutoLogin' => true,
         ], 
-*/
+
 	'authManager' => [
 	    'class' => 'yii\rbac\DbManager',
-	    //'class' => 'yii\rbac\PhpManager',
-	    'defaultRoles' => ['guest'],	// 默认权限 无需验证的权限
+	    'defaultRoles' => ['guest'],	// 默认权限 无需验证的权限 
 	    //'superAdmin' => 'admin',	// 默认超级管理员 无需验证角色
 	],
         'log' => [

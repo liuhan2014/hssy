@@ -64,7 +64,6 @@ class UserController extends Controller
 
         if ($model->load(Yii::$app->request->post())) {
 	    // default value 
-//	    $model->password_hash = 
 	    $model->status = 1;
 	    $model->create_at = date('Y-m-d H:i:s');
 	    $model->updated_at = date('Y-m-d H:i:s');

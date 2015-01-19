@@ -38,7 +38,7 @@ AppAsset::register($this);
 			<?php 
 				$userModule = Yii::$app->getModule('user');
 				 //var_dump(\Yii::$app->user->test()); 
-				 var_dump(\Yii::$app->user->isGuest); 
+				 //var_dump(\Yii::$app->user->isGuest); 
 				 //var_dump(\Yii::$app->user->getId());
 				 //var_dump(Yii::$app->user->test());
 				 //print_r(Yii::$app->user);
@@ -51,17 +51,15 @@ AppAsset::register($this);
 					<li class="light-blue">
 						<a data-toggle="dropdown" href="#" class="dropdown-toggle">
 							<img class="nav-user-photo" src="images/user.jpg" />
-							<?php if(!Yii::$app->user->isGuest) { ?>
-							<span class="user-info"><small>Welcome,</small><?= \Yii::$app->user->identity->username ?></span>
-							<?php } ?>
+							<span class="user-info"><small>Welcome,</small>Admin</span>
 							<i class="ace-icon fa fa-caret-down"></i>
 						</a>
 
 						<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-closer">
 							<li>
-								<a href="index.php?r=user/security/login">
+								<a href="#">
 									<i class="ace-icon fa fa-cog"></i>
-									Login
+									Settings
 								</a>
 							</li>
 
@@ -104,11 +102,11 @@ AppAsset::register($this);
 					<b class="arrow"></b>
 					<ul class="submenu">
 						<li class="active">
-							<a href="index.php?r=user/admin/index"><i class="menu-icon fa fa-caret-right"></i>管理员列表</a>
+							<a href="#"><i class="menu-icon fa fa-caret-right"></i>管理员新增</a>
 							<b class="arrow"></b>
 						</li>
 						<li class="">
-							<a href="index.php?r=admin/group/index"><i class="menu-icon fa fa-caret-right"></i>分组管理</a>
+							<a href="#"><i class="menu-icon fa fa-caret-right"></i>分组管理</a>
 							<b class="arrow"></b>
 						</li>
 					</ul>
@@ -189,22 +187,6 @@ AppAsset::register($this);
 		</div><!-- /.main-content -->
 	</div><!-- /.main-container -->
     <?php $this->endBody() ?>
-<!-- Piwik -->
-<script type="text/javascript">
-  var _paq = _paq || [];
-  _paq.push(['trackPageView']);
-  _paq.push(['enableLinkTracking']);
-  (function() {
-    var u="//123.57.10.186/piwik/";
-    _paq.push(['setTrackerUrl', u+'piwik.php']);
-    _paq.push(['setSiteId', 1]);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-  })();
-</script>
-<noscript><p><img src="//123.57.10.186/piwik/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
-<!-- End Piwik Code -->
-
   </body>
 </html>
 <?php $this->endPage() ?>

@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\modules\Admin\models\GroupSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Groups';
+$this->title = '分组管理';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="group-index">
@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Group', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('添加分组', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
@@ -25,7 +25,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
+            //'id',
             'name',
             'desc',
             'create_time',
