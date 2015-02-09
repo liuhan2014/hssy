@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c9a56c4f3cf134811bc72ccca3d34510",
+    "hash": "3da8cd5d2d7cdf0c34fb6e17c37070ce",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -465,6 +465,48 @@
                 "yii2"
             ],
             "time": "2014-11-09 18:26:51"
+        },
+        {
+            "name": "linslin/yii2-curl",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/linslin/Yii2-Curl.git",
+                "reference": "0831dbfce74117edc6021a4ba1f9b5037a5e63ce"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/linslin/Yii2-Curl/zipball/0831dbfce74117edc6021a4ba1f9b5037a5e63ce",
+                "reference": "0831dbfce74117edc6021a4ba1f9b5037a5e63ce",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "linslin\\yii2\\curl\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nils Gajsek",
+                    "email": "info@linslin.org"
+                }
+            ],
+            "description": "Cool working cURL extension with RESTful support for Yii",
+            "keywords": [
+                " curl",
+                "extension",
+                "restful",
+                "yii2"
+            ],
+            "time": "2014-12-27 11:47:15"
         },
         {
             "name": "swiftmailer/swiftmailer",

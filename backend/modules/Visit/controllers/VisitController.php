@@ -58,18 +58,23 @@ class VisitController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate()
+    public function actionCreate($customer_id,$url)
     {
         $model = new Visit();
 
         if ($model->load(Yii::$app->request->post())) {
 		
-	    $model->create_time = date('Y-m-d H:i:s');
-		
-	    $model->save();
+	        $model->create_time = date('Y-m-d H:i:s');
+	        $model->customer_id = $customer_id;
+	        $model->admin_id = \Yii::$app->user->getId();		
 
-            return $this->redirect(['view', 'id' => $model->id]);
+	        $model->save();
+
+            //return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect($url);
         } else {
+            $this->layout = false;
+
             return $this->render('create', [
                 'model' => $model,
             ]);

@@ -65,17 +65,20 @@ class CustomerController extends Controller
 
         if ($model->load(Yii::$app->request->post())) {
 		
-	    $model->create_time = date("Y-m-d H:i:s");
-	    // 获取当前登陆用户
-       	    // $model->entry_admin = $admin->id;
-	    // 初始状态  1 
-	    $model->status  = 1;
+	        $model->create_time = date("Y-m-d H:i:s");
+	        // 获取当前登陆用户
+            // $model->entry_admin = $admin->id;
+	        // 初始状态  1
+	        $model->status  = 1;
 
-	    if($model->save()){
-		// 记录日志
-
-	    }
-
+	        if($model->save()){
+	            // 记录日志
+                $data['customer_id'] = $model->id;
+                $data['admin_id'] = \Yii::$app->user->getId();
+                $data['content'] = sprintf("添加客户信息");
+                $data['type'] = 1;
+                \Yii::$app->customerLog->write($data);
+	        }
             return $this->redirect(['index']);
         } else {
             return $this->render('create', [
@@ -90,16 +93,24 @@ class CustomerController extends Controller
      * @param integer $id
      * @return mixed
      */
-    public function actionUpdate($id)
+    public function actionUpdate($id,$url)
     {
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            //return $this->redirect(['view', 'id' => $model->id]);
+            // 记录日志
+            $data['customer_id'] = $model->id;
+            $data['admin_id'] = \Yii::$app->user->getId();
+            $data['content'] = sprintf("修改客户信息");
+            $data['type'] = 2;
+            \Yii::$app->customerLog->write($data);
+            return $this->redirect($url);
+
         } else {
-            return $this->render('update', [
-                'model' => $model,
-            ]);
+        //var_dump($model);exit;
+            $this->layout = false;
+            return $this->render('update', ['model' => $model,]);
         }
     }
 

@@ -38,7 +38,7 @@ AppAsset::register($this);
 			<?php 
 				$userModule = Yii::$app->getModule('user');
 				 //var_dump(\Yii::$app->user->test()); 
-				 var_dump(\Yii::$app->user->isGuest); 
+				 //var_dump(\Yii::$app->user->isGuest); 
 				 //var_dump(\Yii::$app->user->getId());
 				 //var_dump(Yii::$app->user->test());
 				 //print_r(Yii::$app->user);
@@ -170,6 +170,14 @@ AppAsset::register($this);
 						</li>
 						<li class="">
 							<a href="index.php?r=customer%2Fcustomer%2Fcreate"><i class="menu-icon fa fa-caret-right"></i>订单统计</a>
+							<b class="arrow"></b>
+						</li>
+						<li class="">
+							<a href="index.php?r=statis/piwik/keywords"><i class="menu-icon fa fa-caret-right"></i>搜索词统计</a>
+							<b class="arrow"></b>
+						</li>
+						<li class="">
+							<a href="index.php?r=statis/piwik/geturl"><i class="menu-icon fa fa-caret-right"></i>页面统计</a>
 							<b class="arrow"></b>
 						</li>
 					</ul>

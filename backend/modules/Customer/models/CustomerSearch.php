@@ -81,12 +81,12 @@ class CustomerSearch extends Customer
     // 获取用户列表
     public function getList($params)
     {
-	$query = new Query;
-	// compose the query
-	$data = $query->select('*')
-	    ->from('tbl_customer')
-	    ->limit(10)->all();
-	
-	return $data;
+	    $query = new Query;
+	    // compose the query
+	    $data = $query->select('*')
+	            ->from('tbl_customer')
+	            ->limit(10)->all();
+	    
+	    return $data;
     }
 }

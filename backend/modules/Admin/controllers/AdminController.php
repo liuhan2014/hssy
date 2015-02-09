@@ -39,9 +39,57 @@ class AdminController extends \yii\web\Controller
 	$it = $rbac->addItem($item);
 	var_dump($it);
 	*/
-	$this->layout = false;
+	    $this->layout = false;
         return $this->render('index');
     }
-    
+
+    /*
+     * 为用户分配权限列表
+     * 
+     * @param  INTEGER  id 
+     * 
+    */
+    public function actionAllown($id=null)
+    {
+        //echo 'allown'; 
+        if(empty($id)){
+            return ;
+        }
+        //  获取指定用户权限信息
+        $relative = Assignment::findAll(['user_id'=>$id]);
+        // 获取所有权限
+	    $data = Item::findAll(['type'=>1]);
+        
+        //$query->joinWith('visit');
+        //print_r($data);
+        //print_r($relative);
+        return $this->render('allown',['data'=>$data ,'relative'=>$relative,'user_id'=>$id ]);
+    }
+
+
+    /*
+     * add user item
+    */
+    public function actionAdditem()
+    {
+        $param = Yii::$app->request->post();
+
+        $user_id = $param['user_id'];
+        $items = $param['item_name'];
+        if(empty($user_id) || empty($items)){
+           return;
+        }
+
+	    $rbac = Yii::$app->authManager;
+
+	    $item = new Item();
+        foreach($items as $key=>$value){
+            $item->name = $value;            
+	        $rbac->assign($item,$user_id);
+        }
+        
+    }
+
+
 
 }

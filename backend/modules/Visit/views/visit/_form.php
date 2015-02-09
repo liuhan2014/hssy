@@ -17,7 +17,7 @@ $visit_result = Yii::$app->params['visit_result'];
                         'options' => ['enctype' => 'multipart/form-data'],
                         'fieldConfig' => [
                                 'horizontalCssClasses' => [
-                                    'label' => 'col-sm-2',
+                                    'label' => 'col-sm-3',
                                     'wrapper' => 'col-sm-8',
                                 ],
                              ],

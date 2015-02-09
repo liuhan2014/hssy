@@ -8,7 +8,7 @@ $params = array_merge(
 
 return [
     'id' => 'app-backend',
-    'name' => '测试后台',
+    'name' => '商家管理后台',
     'basePath' => dirname(__DIR__),
     'language' => 'zh-CN',
     'timezone' => 'Asia/Shanghai',
@@ -27,6 +27,7 @@ return [
 	'visit' => ['class' => 'app\modules\Visit\Visit',],	// 回访管理
 	'customer' => ['class' => 'app\modules\Customer\Customer',], // 客户管理
 	'admin' => ['class' => 'app\modules\Admin\Admin',],	// 管理员其它操作  例 分组 rbac
+	'statis' => ['class' => 'app\modules\Statis\Module',], // 统计分析 
 	],
     'components' => [
         'request' => [
@@ -39,6 +40,7 @@ return [
             'enableAutoLogin' => true,
         ], 
 */
+    'customerLog' =>['class' => 'common\models\CustomerLog'],
 	'authManager' => [
 	    'class' => 'yii\rbac\DbManager',
 	    //'class' => 'yii\rbac\PhpManager',
